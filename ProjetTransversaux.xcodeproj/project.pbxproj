@@ -14,6 +14,7 @@
 		F1555AE11C8E1BF80085B415 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1555ADF1C8E1BF80085B415 /* LaunchScreen.storyboard */; };
 		F1555AEC1C8E1BF80085B415 /* ProjetTransversauxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1555AEB1C8E1BF80085B415 /* ProjetTransversauxTests.swift */; };
 		F1555AF71C8E1BF80085B415 /* ProjetTransversauxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1555AF61C8E1BF80085B415 /* ProjetTransversauxUITests.swift */; };
+		F1A4E72B1C8E268900D6220B /* ViewControllerTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A4E72A1C8E268900D6220B /* ViewControllerTwo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		F1555AF21C8E1BF80085B415 /* ProjetTransversauxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjetTransversauxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1555AF61C8E1BF80085B415 /* ProjetTransversauxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjetTransversauxUITests.swift; sourceTree = "<group>"; };
 		F1555AF81C8E1BF80085B415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1A4E72A1C8E268900D6220B /* ViewControllerTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerTwo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				F1555AD61C8E1BF80085B415 /* AppDelegate.swift */,
 				F1555AD81C8E1BF80085B415 /* ViewController.swift */,
+				F1A4E72A1C8E268900D6220B /* ViewControllerTwo.swift */,
 				F1555ADA1C8E1BF80085B415 /* Main.storyboard */,
 				F1555ADD1C8E1BF80085B415 /* Assets.xcassets */,
 				F1555ADF1C8E1BF80085B415 /* LaunchScreen.storyboard */,
@@ -258,6 +261,7 @@
 			files = (
 				F1555AD91C8E1BF80085B415 /* ViewController.swift in Sources */,
 				F1555AD71C8E1BF80085B415 /* AppDelegate.swift in Sources */,
+				F1A4E72B1C8E268900D6220B /* ViewControllerTwo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +407,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Belmadi.ProjetTransversaux;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -414,6 +419,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Belmadi.ProjetTransversaux;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -484,6 +490,7 @@
 				F1555AFD1C8E1BF80085B415 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F1555AFE1C8E1BF80085B415 /* Build configuration list for PBXNativeTarget "ProjetTransversauxTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +499,7 @@
 				F1555B001C8E1BF80085B415 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F1555B011C8E1BF80085B415 /* Build configuration list for PBXNativeTarget "ProjetTransversauxUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +508,7 @@
 				F1555B031C8E1BF80085B415 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
