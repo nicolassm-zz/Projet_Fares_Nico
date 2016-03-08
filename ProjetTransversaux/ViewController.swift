@@ -16,12 +16,20 @@ class ViewController: UIViewController {
     }
     
     @IBOutlet weak var UsernameTxt: UITextField!
-
+    @IBOutlet weak var PasswordTxt: UITextField!
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
     }
-
+	
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let sVC: TwoViewController = segue.destinationViewController as! TwoViewController
+        
+        sVC.Username = UsernameTxt.text!
+        sVC.Password = PasswordTxt.text!
+    }
 
 }
 

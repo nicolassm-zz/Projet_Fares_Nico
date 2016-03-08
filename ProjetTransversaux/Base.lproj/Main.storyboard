@@ -36,21 +36,24 @@
                                     <segue destination="jx7-2S-teJ" kind="show" id="tmo-Oi-ryp"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ffy-Jj-z69">
-                                <rect key="frame" x="175" y="115" width="228" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zeH-ze-VHI">
                                 <rect key="frame" x="175" y="71" width="228" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ffy-Jj-z69">
+                                <rect key="frame" x="175" y="115" width="228" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
+                        <outlet property="PasswordTxt" destination="ffy-Jj-z69" id="Pgl-pd-GZt"/>
+                        <outlet property="PasswordTxtr" destination="8bC-Xf-vdC" id="SUt-JS-9gv"/>
                         <outlet property="UsernameTxt" destination="zeH-ze-VHI" id="d5t-3d-9cu"/>
                     </connections>
                 </viewController>
@@ -99,6 +102,7 @@
                     </view>
                     <connections>
                         <outlet property="lblMessage" destination="Bg3-tM-2Vt" id="fyi-s8-yWQ"/>
+                        <outlet property="lblPassword" destination="LHH-sS-Pz2" id="ZQa-vR-pG2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fvX-Bf-O0E" userLabel="First Responder" sceneMemberID="firstResponder"/>

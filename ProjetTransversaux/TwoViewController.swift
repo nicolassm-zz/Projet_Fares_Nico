@@ -10,14 +10,19 @@ import UIKit
 
 class TwoViewController: UIViewController {
 
-    var message = String()
+    var Username = String()
+    var Password = String()
+    @IBOutlet weak var lblMessage: UILabel!
+    @IBOutlet weak var lblPassword: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-            lblMessage.text = message
+        lblMessage.text = Username
+        lblPassword.text = Password
         // Do any additional setup after loading the view.
     }
-    @IBOutlet weak var lblMessage: UILabel!
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
