@@ -58,10 +58,10 @@
             </objects>
             <point key="canvasLocation" x="-360" y="40"/>
         </scene>
-        <!--View Controller-->
+        <!--Two View Controller-->
         <scene sceneID="o63-OY-DNN">
             <objects>
-                <viewController id="jx7-2S-teJ" sceneMemberID="viewController">
+                <viewController id="jx7-2S-teJ" customClass="TwoViewController" customModule="ProjetTransversaux" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Y01-Gh-LaT"/>
                         <viewControllerLayoutGuide type="bottom" id="w8h-1D-0je"/>
@@ -83,13 +83,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PasswordText" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHH-sS-Pz2">
-                                <rect key="frame" x="149" y="162" width="42" height="21"/>
+                                <rect key="frame" x="149" y="162" width="227" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UsernameText" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bg3-tM-2Vt">
-                                <rect key="frame" x="149" y="117" width="42" height="21"/>
+                                <rect key="frame" x="149" y="117" width="227" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -97,6 +97,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="lblMessage" destination="Bg3-tM-2Vt" id="fyi-s8-yWQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fvX-Bf-O0E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
