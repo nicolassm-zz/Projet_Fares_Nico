@@ -1,5 +1,6 @@
 using System;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Navigation;
 
 namespace ProjetTransversal.Views
 {
@@ -8,7 +9,15 @@ namespace ProjetTransversal.Views
         public MainPage()
         {
             InitializeComponent();
-            NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Enabled;
+            //NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Enabled;
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            var user = e.Parameter;
+
+
         }
     }
 }
