@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GalaSoft.MvvmLight;
 
 namespace ProjetTransversal.ViewModels
 {
@@ -22,6 +23,7 @@ namespace ProjetTransversal.ViewModels
         }
 
         public MainPageViewModel MainPage => ServiceLocator.Current.GetInstance<MainPageViewModel>();
-        public LoginPageViewModel SettingsPage => ServiceLocator.Current.GetInstance<LoginPageViewModel>();
+        public LoginPageViewModel LoginPage => ServiceLocator.Current.GetInstance<LoginPageViewModel>();
+
     }
 }

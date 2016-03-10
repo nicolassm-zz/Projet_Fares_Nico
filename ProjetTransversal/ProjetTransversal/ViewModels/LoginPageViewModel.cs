@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ProjetTransversal.Models;
-using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.Command;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml;
+using Template10.Services.NavigationService;
+using GalaSoft.MvvmLight.Views;
+using Template10.Mvvm;
+using GalaSoft.MvvmLight.Command;
 
 namespace ProjetTransversal.ViewModels
 {
@@ -43,15 +45,14 @@ namespace ProjetTransversal.ViewModels
 
         public void NavigateToMain()
         {
-            User User = new User();
 
-            User.username = InputName;
-            User.password = InputPw;
+            User.user.username = _inputName;
+            User.user.password = _inputPw;
             var user = new Tuple<string, string>(InputName, InputPw);
-            
 
-            Frame Frame = Window.Current.Content as Frame;
-            Frame.Navigate(typeof(Views.MainPage), user);
+            this.NavigationService.Navigate(typeof(Views.MainPage), user);
+            //Frame Frame = Window.Current.Content as Frame;
+            //this.Frame.Navigate(typeof(Views.MainPage), user);
         }
     }
 }

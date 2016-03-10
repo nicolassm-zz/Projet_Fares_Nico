@@ -8,14 +8,14 @@
       xmlns:local="using:ProjetTransversal.Views"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:vm="using:ProjetTransversal.ViewModels"
-      DataContext="{Binding Source={StaticResource Locator}, Path=LoginPage}"
+      DataContext="{Binding Source={StaticResource Locator}, Path=MainPage}"
       mc:Ignorable="d">
 
-    <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Orientation="Vertical">
 
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="20" Text="{Binding username, Mode=TwoWay}" VerticalAlignment="Top" Width="61.6666679382324"/>
-        <TextBlock Text="{Binding password, Mode=TwoWay}"/>
-    </RelativePanel>
+        <TextBlock x:Name="username" HorizontalAlignment="Left" Height="20" Text="{Binding username}" VerticalAlignment="Top" Width="61.6666679382324"/>
+        <TextBlock x:Name="password" Text="{Binding password}"/>
+    </StackPanel>
 
 </Page>
 

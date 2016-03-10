@@ -10,5 +10,13 @@ namespace ProjetTransversal.Models
     {
         public string username { get; set; }
         public string password { get; set; }
+
+        private static User _user;
+
+        public static User user
+        {
+            get { return _user ?? (_user = new User()); }
+        }
+
     }
 }

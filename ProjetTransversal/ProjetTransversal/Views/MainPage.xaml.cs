@@ -1,6 +1,7 @@
 using System;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
+using ProjetTransversal.Models;
 
 namespace ProjetTransversal.Views
 {
@@ -15,9 +16,10 @@ namespace ProjetTransversal.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            var user = e.Parameter;
+            var user = e.Parameter as Tuple<string, string>;
 
-
+            this.username.Text = User.user.username;
+            this.password.Text = User.user.password;
         }
     }
 }
