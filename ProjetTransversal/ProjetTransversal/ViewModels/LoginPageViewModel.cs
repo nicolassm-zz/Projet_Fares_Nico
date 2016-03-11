@@ -11,6 +11,8 @@ using Template10.Services.NavigationService;
 using GalaSoft.MvvmLight.Views;
 using Template10.Mvvm;
 using GalaSoft.MvvmLight.Command;
+using Tweetinvi.Core.Credentials;
+using Tweetinvi;
 
 namespace ProjetTransversal.ViewModels
 {
@@ -26,7 +28,7 @@ namespace ProjetTransversal.ViewModels
             {
                 if (_login == null)
                 {
-                    _login = new RelayCommand(NavigateToMain);
+                    _login = new RelayCommand(NavigateToAuth);
                 }
                 return _login;
             }
@@ -43,14 +45,19 @@ namespace ProjetTransversal.ViewModels
             set { Set(ref _inputPw, value); }
         }
 
-        public void NavigateToMain()
+        public void NavigateToAuth()
         {
 
-            User.user.username = _inputName;
-            User.user.password = _inputPw;
-            var user = new Tuple<string, string>(InputName, InputPw);
+            Models.User.user.username = _inputName;
+            Models.User.user.password = _inputPw;
 
-            this.NavigationService.Navigate(typeof(Views.MainPage), user);
+            // Create a new set of credentials for the application
+            var appCredentials = new TwitterCredentials("PxHS19i96nuyxI1YNd1P5n0cm", "FdLZwVdWx5CCTOZRs95DdEPHYWJQBnA7V0z6EMAnaMcIHHCOQX");
+
+            // Go to the URL so that Twitter authenticates the user and gives him a PIN code
+            var url = CredentialsCreator.GetAuthorizationURL(appCredentials);
+
+            this.NavigationService.Navigate(typeof(Views.AuthPage), url);
             //Frame Frame = Window.Current.Content as Frame;
             //this.Frame.Navigate(typeof(Views.MainPage), user);
         }

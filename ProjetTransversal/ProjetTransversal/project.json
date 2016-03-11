@@ -4,7 +4,8 @@
     "Microsoft.Xaml.Behaviors.Uwp.Managed": "1.0.3",
     "MvvmLightLibs": "5.2.0",
     "Newtonsoft.Json": "8.0.2",
-    "Template10": "1.1.6"
+    "Template10": "1.1.6",
+    "TweetinviAPI": "0.9.11"
   },
   "frameworks": {
     "uap10.0": {}

@@ -2,6 +2,8 @@ using System;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using ProjetTransversal.Models;
+using Tweetinvi;
+using Tweetinvi.Core.Parameters;
 
 namespace ProjetTransversal.Views
 {
@@ -18,8 +20,12 @@ namespace ProjetTransversal.Views
             base.OnNavigatedTo(e);
             var user = e.Parameter as Tuple<string, string>;
 
-            this.username.Text = User.user.username;
-            this.password.Text = User.user.password;
+            this.username.Text = Models.User.user.username;
+            this.password.Text = Models.User.user.password;
+
+            // Get the latest 40 tweets published on your timeline
+            var tweets = Timeline.GetHomeTimeline();
+            
         }
     }
 }

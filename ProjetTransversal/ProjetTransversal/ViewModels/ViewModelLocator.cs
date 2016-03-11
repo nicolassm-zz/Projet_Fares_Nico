@@ -20,10 +20,12 @@ namespace ProjetTransversal.ViewModels
 
             SimpleIoc.Default.Register<MainPageViewModel>();
             SimpleIoc.Default.Register<LoginPageViewModel>();
+            SimpleIoc.Default.Register<AuthPageViewModel>();
         }
 
         public MainPageViewModel MainPage => ServiceLocator.Current.GetInstance<MainPageViewModel>();
         public LoginPageViewModel LoginPage => ServiceLocator.Current.GetInstance<LoginPageViewModel>();
+        public AuthPageViewModel AuthPage => ServiceLocator.Current.GetInstance<AuthPageViewModel>();
 
     }
 }
