@@ -16,6 +16,10 @@
 		F1555AEC1C8E1BF80085B415 /* ProjetTransversauxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1555AEB1C8E1BF80085B415 /* ProjetTransversauxTests.swift */; };
 		F1555AF71C8E1BF80085B415 /* ProjetTransversauxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1555AF61C8E1BF80085B415 /* ProjetTransversauxUITests.swift */; };
 		F1A4E72B1C8E268900D6220B /* ViewControllerTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A4E72A1C8E268900D6220B /* ViewControllerTwo.swift */; };
+		F1C215311C977DF300B24A85 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C2152D1C977DF300B24A85 /* Fabric.framework */; };
+		F1C215321C977DF300B24A85 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C2152E1C977DF300B24A85 /* TwitterKit.framework */; };
+		F1C215331C977DF300B24A85 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F1C2152F1C977DF300B24A85 /* TwitterKitResources.bundle */; };
+		F1C215341C977DF300B24A85 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C215301C977DF300B24A85 /* TwitterCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		F1555AF61C8E1BF80085B415 /* ProjetTransversauxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjetTransversauxUITests.swift; sourceTree = "<group>"; };
 		F1555AF81C8E1BF80085B415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1A4E72A1C8E268900D6220B /* ViewControllerTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerTwo.swift; sourceTree = "<group>"; };
+		F1C2152D1C977DF300B24A85 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		F1C2152E1C977DF300B24A85 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
+		F1C2152F1C977DF300B24A85 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
+		F1C215301C977DF300B24A85 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1C215311C977DF300B24A85 /* Fabric.framework in Frameworks */,
+				F1C215341C977DF300B24A85 /* TwitterCore.framework in Frameworks */,
+				F1C215321C977DF300B24A85 /* TwitterKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +96,10 @@
 				F1555AEA1C8E1BF80085B415 /* ProjetTransversauxTests */,
 				F1555AF51C8E1BF80085B415 /* ProjetTransversauxUITests */,
 				F1555AD41C8E1BF80085B415 /* Products */,
+				F1C2152D1C977DF300B24A85 /* Fabric.framework */,
+				F1C2152E1C977DF300B24A85 /* TwitterKit.framework */,
+				F1C2152F1C977DF300B24A85 /* TwitterKitResources.bundle */,
+				F1C215301C977DF300B24A85 /* TwitterCore.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,6 +156,7 @@
 				F1555ACF1C8E1BF80085B415 /* Sources */,
 				F1555AD01C8E1BF80085B415 /* Frameworks */,
 				F1555AD11C8E1BF80085B415 /* Resources */,
+				F1C2152C1C977DD100B24A85 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -235,6 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1C215331C977DF300B24A85 /* TwitterKitResources.bundle in Resources */,
 				F1555AE11C8E1BF80085B415 /* LaunchScreen.storyboard in Resources */,
 				F1555ADE1C8E1BF80085B415 /* Assets.xcassets in Resources */,
 				F1555ADC1C8E1BF80085B415 /* Main.storyboard in Resources */,
@@ -256,6 +273,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F1C2152C1C977DD100B24A85 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run bb47f58bb65ccc61844b19c746b02719ddd9ce7c aa100530d7fa10efde91fc069c5853d0a7b6ccaeb2c1504afd089bedb72d54ed";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F1555ACF1C8E1BF80085B415 /* Sources */ = {
@@ -407,6 +440,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ProjetTransversaux/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Belmadi.ProjetTransversaux;
@@ -419,6 +456,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ProjetTransversaux/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Belmadi.ProjetTransversaux;

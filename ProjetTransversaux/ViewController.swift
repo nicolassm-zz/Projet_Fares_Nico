@@ -6,29 +6,40 @@
 //  Copyright © 2016 Ingesup. All rights reserved.
 //
 
+
 import UIKit
+import TwitterKit
+
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // Do any additional setup after loading the view, typically from a nib.        
+        let logInButton = TWTRLogInButton { (session, error) in
+        if let unwrappedSession = session {
+            let alert = UIAlertController(title: "Logged In",
+                message: "User \(unwrappedSession.userName) has logged in",
+                preferredStyle: UIAlertControllerStyle.Alert
+            )
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        } else {
+            NSLog("Login error: %@", error!.localizedDescription);
+        }
     }
     
-    @IBOutlet weak var UsernameTxt: UITextField!
-    @IBOutlet weak var PasswordTxt: UITextField!
+    // TODO: Change where the log in button is positioned in your view
+    logInButton.center = self.view.center
+    self.view.addSubview(logInButton)
+
     
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
         
-    }
-	
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let sVC: TwoViewController = segue.destinationViewController as! TwoViewController
-        
-        sVC.Username = UsernameTxt.text!
-        sVC.Password = PasswordTxt.text!
     }
 
 }
