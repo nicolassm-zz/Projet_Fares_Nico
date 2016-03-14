@@ -13,8 +13,8 @@
 
     <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Orientation="Vertical">
 
-        <TextBlock x:Name="username" HorizontalAlignment="Left" Height="20" Text="{Binding username}" VerticalAlignment="Top" Width="61.6666679382324"/>
-        <TextBlock x:Name="password" Text="{Binding password}"/>
+        <TextBlock x:Name="username" HorizontalAlignment="Left" Height="20" Text="YES" VerticalAlignment="Top" Width="61.6666679382324"/>
+        <TextBlock x:Name="password" Text="HELLO"/>
     </StackPanel>
 
 </Page>

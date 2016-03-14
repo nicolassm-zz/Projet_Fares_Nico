@@ -18,19 +18,19 @@ namespace ProjetTransversal.ViewModels
 {
     class LoginPageViewModel : ViewModelBase
     {
-        private RelayCommand _login;
+        private RelayCommand _enterAuth;
         private string _inputName;
         private string _inputPw;
 
-        public RelayCommand Login
+        public RelayCommand EnterAuth
         {
             get
             {
-                if (_login == null)
+                if (_enterAuth == null)
                 {
-                    _login = new RelayCommand(NavigateToAuth);
+                    _enterAuth = new RelayCommand(NavigateToAuth);
                 }
-                return _login;
+                return _enterAuth;
             }
         }
 
@@ -39,6 +39,7 @@ namespace ProjetTransversal.ViewModels
             get { return _inputName; }
             set { Set(ref _inputName, value); }
         }
+
         public string InputPw
         {
             get { return _inputPw; }
@@ -51,13 +52,11 @@ namespace ProjetTransversal.ViewModels
             Models.User.user.username = _inputName;
             Models.User.user.password = _inputPw;
 
-            // Create a new set of credentials for the application
-            var appCredentials = new TwitterCredentials("PxHS19i96nuyxI1YNd1P5n0cm", "FdLZwVdWx5CCTOZRs95DdEPHYWJQBnA7V0z6EMAnaMcIHHCOQX");
-
             // Go to the URL so that Twitter authenticates the user and gives him a PIN code
-            var url = CredentialsCreator.GetAuthorizationURL(appCredentials);
+            Authentication.AppCredentials = new TwitterCredentials("PxHS19i96nuyxI1YNd1P5n0cm", "FdLZwVdWx5CCTOZRs95DdEPHYWJQBnA7V0z6EMAnaMcIHHCOQX");
+            Authentication.AuthUrl = CredentialsCreator.GetAuthorizationURL(Authentication.AppCredentials);
 
-            this.NavigationService.Navigate(typeof(Views.AuthPage), url);
+            this.NavigationService.Navigate(typeof(Views.AuthPage));
             //Frame Frame = Window.Current.Content as Frame;
             //this.Frame.Navigate(typeof(Views.MainPage), user);
         }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProjetTransversal.Models;
+using ProjetTransversal.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -30,10 +32,12 @@ namespace ProjetTransversal.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            var url = e.Parameter as Uri;
+            var url = new Uri(Authentication.AuthUrl);
 
             this.AuthWeb.Source = url;
 
         }
+
+
     }
 }

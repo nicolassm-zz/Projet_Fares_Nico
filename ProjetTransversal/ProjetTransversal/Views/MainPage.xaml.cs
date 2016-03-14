@@ -20,8 +20,6 @@ namespace ProjetTransversal.Views
             base.OnNavigatedTo(e);
             var user = e.Parameter as Tuple<string, string>;
 
-            this.username.Text = Models.User.user.username;
-            this.password.Text = Models.User.user.password;
 
             // Get the latest 40 tweets published on your timeline
             var tweets = Timeline.GetHomeTimeline();
