@@ -15,15 +15,5 @@ namespace ProjetTransversal.Views
             //NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Enabled;
         }
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            base.OnNavigatedTo(e);
-            var user = e.Parameter as Tuple<string, string>;
-
-
-            // Get the latest 40 tweets published on your timeline
-            var tweets = Timeline.GetHomeTimeline();
-            
-        }
     }
 }

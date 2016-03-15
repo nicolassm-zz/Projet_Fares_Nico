@@ -10,11 +10,11 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="35"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
-            <TextBlock Text="Please enter your PIN here:" HorizontalAlignment="Center"/>
+            <TextBlock Text="Please enter your PIN here:"/>
             <TextBox Text="{Binding AuthPin, Mode=TwoWay}"/>
             <Button Content="Enter" Command="{Binding Login}"/>
         </StackPanel>

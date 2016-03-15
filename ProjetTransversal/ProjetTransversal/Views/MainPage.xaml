@@ -8,14 +8,36 @@
       xmlns:local="using:ProjetTransversal.Views"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:vm="using:ProjetTransversal.ViewModels"
+      xmlns:t="using:Tweetinvi.Logic"
       DataContext="{Binding Source={StaticResource Locator}, Path=MainPage}"
       mc:Ignorable="d">
 
-    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Orientation="Vertical">
-
-        <TextBlock x:Name="username" HorizontalAlignment="Left" Height="20" Text="YES" VerticalAlignment="Top" Width="61.6666679382324"/>
-        <TextBlock x:Name="password" Text="HELLO"/>
-    </StackPanel>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ScrollViewer>
+            <ListView Name="Timeline" ItemsSource="{Binding Tweets}" ScrollViewer.HorizontalScrollMode="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="t:Tweet">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Row="0" Grid.Column="0" Source="{x:Bind CreatedBy.ProfileImageUrl400x400}" Width="120" Height="120"/>
+                            <TextBlock Grid.Row="1" Grid.Column="1" Text="{x:Bind Text}" MaxWidth="160" TextTrimming="WordEllipsis" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollViewer>
+    </Grid>
 
 </Page>
 
