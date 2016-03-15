@@ -16,7 +16,7 @@
         <ScrollViewer>
             <ListView Name="Timeline" ItemsSource="{Binding Tweets}" ScrollViewer.HorizontalScrollMode="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto">
                 <ListView.ItemTemplate>
-                    <DataTemplate x:DataType="t:Tweet">
+                    <DataTemplate>
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
@@ -30,8 +30,10 @@
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                            <Image Grid.Row="0" Grid.Column="0" Source="{x:Bind CreatedBy.ProfileImageUrl400x400}" Width="120" Height="120"/>
-                            <TextBlock Grid.Row="1" Grid.Column="1" Text="{x:Bind Text}" MaxWidth="160" TextTrimming="WordEllipsis" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
+                            <Image Grid.Row="0" Grid.Column="0" Source="{Binding CreatedBy.ProfileImageUrl400x400}" Width="120" Height="120"/>
+                            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding CreatedBy.Name}"/>
+                            <TextBlock Grid.Row="0" Grid.Column="2" Text="{Binding CreatedBy.ScreenName}"/>
+                            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Text}" MaxWidth="160" TextTrimming="WordEllipsis" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>
