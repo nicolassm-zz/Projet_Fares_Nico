@@ -22,8 +22,11 @@ class ViewController: UIViewController {
                 message: "User \(unwrappedSession.userName) has logged in",
                 preferredStyle: UIAlertControllerStyle.Alert
             )
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:nil))
+            self.ViewChange()
+            self.presentViewController(alert, animated: true, completion:nil)
+            
+            
         } else {
             NSLog("Login error: %@", error!.localizedDescription);
         }
@@ -42,5 +45,10 @@ class ViewController: UIViewController {
         
     }
 
+    func ViewChange(){
+        self.navigationController?.pushViewController(self.storyboard?.instantiateViewControllerWithIdentifier("Timeline") as! TwoViewController
+            , animated: true)
+    }
+    
 }
 
