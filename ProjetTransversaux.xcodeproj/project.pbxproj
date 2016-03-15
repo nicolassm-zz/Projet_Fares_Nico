@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F100A7781C9858B200E6B4F4 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100A7771C9858B200E6B4F4 /* TimelineView.swift */; };
 		F1550BDB1C8ED3D500D38B2B /* TwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1550BDA1C8ED3D000D38B2B /* TwoViewController.swift */; };
 		F1555AD71C8E1BF80085B415 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1555AD61C8E1BF80085B415 /* AppDelegate.swift */; };
 		F1555AD91C8E1BF80085B415 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1555AD81C8E1BF80085B415 /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F100A7771C9858B200E6B4F4 /* TimelineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
 		F1550BDA1C8ED3D000D38B2B /* TwoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoViewController.swift; sourceTree = "<group>"; };
 		F1555AD31C8E1BF80085B415 /* ProjetTransversaux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjetTransversaux.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1555AD61C8E1BF80085B415 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				F1555ADA1C8E1BF80085B415 /* Main.storyboard */,
 				F1555ADD1C8E1BF80085B415 /* Assets.xcassets */,
 				F1555ADF1C8E1BF80085B415 /* LaunchScreen.storyboard */,
+				F100A7771C9858B200E6B4F4 /* TimelineView.swift */,
 				F1550BDA1C8ED3D000D38B2B /* TwoViewController.swift */,
 				F1555AE21C8E1BF80085B415 /* Info.plist */,
 			);
@@ -299,6 +302,7 @@
 				F1555AD71C8E1BF80085B415 /* AppDelegate.swift in Sources */,
 				F1A4E72B1C8E268900D6220B /* ViewControllerTwo.swift in Sources */,
 				F1550BDB1C8ED3D500D38B2B /* TwoViewController.swift in Sources */,
+				F100A7781C9858B200E6B4F4 /* TimelineView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
