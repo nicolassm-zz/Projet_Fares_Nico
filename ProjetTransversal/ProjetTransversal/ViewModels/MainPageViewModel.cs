@@ -15,6 +15,12 @@ namespace ProjetTransversal.ViewModels
     public class MainPageViewModel : ViewModelBase
     {
         private ObservableCollection<Tweetinvi.Logic.Tweet> _tweets;
+        private string _contentImage;
+
+        public string ContentImage {
+            get { return _contentImage; }
+            set { Set(ref _contentImage, value); }
+        }
 
         public ObservableCollection<Tweetinvi.Logic.Tweet> Tweets {
             get { return _tweets; }
@@ -37,6 +43,11 @@ namespace ProjetTransversal.ViewModels
                 {
                     //basic.Image = await _imageLoader.GetFromUrl(basic.img);
                     Tweets.Add(tweet);
+                    var media = tweet.Media;
+                    if (media.Count != 0)
+                    {
+                        ContentImage = tweet.Media[0].MediaURL;
+                    }
                 }
             }
         }

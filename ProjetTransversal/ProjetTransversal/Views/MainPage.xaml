@@ -17,23 +17,19 @@
             <ListView Name="Timeline" ItemsSource="{Binding Tweets}" ScrollViewer.HorizontalScrollMode="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                            </Grid.RowDefinitions>
+                        <Grid Margin="0,10,0,10">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                            <Image Grid.Row="0" Grid.Column="0" Source="{Binding CreatedBy.ProfileImageUrl400x400}" Width="120" Height="120"/>
-                            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding CreatedBy.Name}"/>
-                            <TextBlock Grid.Row="0" Grid.Column="2" Text="{Binding CreatedBy.ScreenName}"/>
-                            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Text}" MaxWidth="160" TextTrimming="WordEllipsis" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
+                            <Image Grid.Column="0" Source="{Binding CreatedBy.ProfileImageUrl}" Width="40" Height="40" VerticalAlignment="Top" Margin="0,0,10,0"/>
+                            <RelativePanel Grid.Column="1">
+                                <TextBlock Name="Name" Text="{Binding CreatedBy.Name}" FontWeight="Bold"/>
+                                <TextBlock Name="At" Text="@" Foreground="#FF858585" RelativePanel.RightOf="Name" Margin="5,0,0,0"/>
+                                <TextBlock Name="ScreenName" Text="{Binding CreatedBy.ScreenName}" Foreground="#FF858585" RelativePanel.RightOf="At"/>
+                                <TextBlock Name="Text" Text="{Binding Text}" Width="450" TextWrapping="Wrap" RelativePanel.Below="Name"/>
+                                <Image Name="ContentImage" Source="{Binding Media[0].MediaURL}" Width="450" RelativePanel.Below="Text"/>
+                            </RelativePanel>
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>
