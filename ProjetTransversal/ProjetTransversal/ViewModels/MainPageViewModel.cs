@@ -9,6 +9,8 @@ using System.Collections.ObjectModel;
 using Tweetinvi;
 using Tweetinvi.Logic;
 using System;
+using System.IO;
+using GalaSoft.MvvmLight.Command;
 
 namespace ProjetTransversal.ViewModels
 {
@@ -16,6 +18,64 @@ namespace ProjetTransversal.ViewModels
     {
         private ObservableCollection<Tweetinvi.Logic.Tweet> _tweets;
         private string _contentImage;
+        private Tweetinvi.Logic.User _mainUser;
+        private RelayCommand<string> _like;
+        private RelayCommand<string> _reply;
+        private RelayCommand<string> _retweet;
+
+        public RelayCommand<string> Like
+        {
+            get
+            {
+                if (_like == null)
+                {
+                    _like = new RelayCommand<string>(LikeTweet);
+                }
+                return _like;
+            }
+        }
+
+        private void LikeTweet(string param)
+        {
+            var id = Int64.Parse(param);
+            Tweetinvi.Tweet.FavoriteTweet(id);
+        }
+
+        public RelayCommand<string> Reply
+        {
+            get
+            {
+                if (_reply == null)
+                {
+
+                }
+                return _reply;
+            }
+        }
+
+        public RelayCommand<string> Retweet
+        {
+            get
+            {
+                if (_retweet == null)
+                {
+                    _retweet = new RelayCommand<string>(RetweetTweet);
+                }
+                return _retweet;
+            }
+        }
+
+        private void RetweetTweet(string param)
+        {
+            var id = Int64.Parse(param);
+            Tweetinvi.Tweet.PublishRetweet(id);
+        }
+
+        public Tweetinvi.Logic.User MainUser
+        {
+            get { return _mainUser; }
+            set { Set(ref _mainUser, value); }
+        }
 
         public string ContentImage {
             get { return _contentImage; }
@@ -29,7 +89,7 @@ namespace ProjetTransversal.ViewModels
 
         public MainPageViewModel()
         {
-
+            MainUser = Tweetinvi.User.GetAuthenticatedUser() as Tweetinvi.Logic.User;
         }
 
         public override async Task OnNavigatedToAsync(object parameter, NavigationMode mode, IDictionary<string, object> state)

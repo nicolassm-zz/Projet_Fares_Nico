@@ -13,7 +13,18 @@
       mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ScrollViewer>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+        <RelativePanel Grid.Row="0">
+            <Image Name="MainPic" Source="{Binding MainUser.ProfileImageUrl}" Width="40" Height="40" Margin="10,10,10,10"/>
+            <TextBlock Name="MainName" Text="{Binding MainUser.Name}" FontWeight="Bold" RelativePanel.RightOf="MainPic" Margin="5,0,0,0"/>
+            <TextBlock Name="MainAt" Text="@" Foreground="#FF858585" RelativePanel.RightOf="MainName" Margin="5,0,0,0"/>
+            <TextBlock Name="MainScreenName" Text="{Binding MainUser.ScreenName}" Foreground="#FF858585" RelativePanel.RightOf="MainAt"/>
+        </RelativePanel>
+        <ScrollViewer Grid.Row="1">
             <ListView Name="Timeline" ItemsSource="{Binding Tweets}" ScrollViewer.HorizontalScrollMode="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -29,6 +40,11 @@
                                 <TextBlock Name="ScreenName" Text="{Binding CreatedBy.ScreenName}" Foreground="#FF858585" RelativePanel.RightOf="At"/>
                                 <TextBlock Name="Text" Text="{Binding Text}" Width="450" TextWrapping="Wrap" RelativePanel.Below="Name"/>
                                 <Image Name="ContentImage" Source="{Binding Media[0].MediaURL}" Width="450" RelativePanel.Below="Text"/>
+                                <StackPanel Orientation="Horizontal" RelativePanel.Below="ContentImage">
+                                    <Button Content="Reply" Command="{Binding Source={StaticResource Locator}, Path=MainPage.Reply}" CommandParameter="{Binding IdStr}"/>
+                                    <Button Content="Retweet" Command="{Binding Source={StaticResource Locator}, Path=MainPage.Retweet}" CommandParameter="{Binding IdStr}"/>
+                                    <Button Name="Like"  Content="Like" Command="{Binding Source={StaticResource Locator}, Path=MainPage.Like}" CommandParameter="{Binding IdStr}"/>
+                                </StackPanel>
                             </RelativePanel>
                         </Grid>
                     </DataTemplate>
