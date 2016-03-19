@@ -20,8 +20,6 @@ namespace ProjetTransversal.ViewModels
     class LoginPageViewModel : ViewModelBase
     {
         private RelayCommand _enterAuth;
-        private string _inputName;
-        private string _inputPw;
 
         public RelayCommand EnterAuth
         {
@@ -30,26 +28,11 @@ namespace ProjetTransversal.ViewModels
                 if (_enterAuth == null)
                 {
                     _enterAuth = new RelayCommand(CheckAuthentication);
-                    /*var exists = tmp.Result;
-                    if (!exists)
-                        _enterAuth = new RelayCommand(NavigateToAuth);
-                    else _enterAuth = new RelayCommand(NavigateToMain);*/
                 }
                 return _enterAuth;
             }
         }
 
-        public string InputName
-        {
-            get { return _inputName; }
-            set { Set(ref _inputName, value); }
-        }
-
-        public string InputPw
-        {
-            get { return _inputPw; }
-            set { Set(ref _inputPw, value); }
-        }
 
         public async void CheckAuthentication()
         {
@@ -68,10 +51,6 @@ namespace ProjetTransversal.ViewModels
 
         public void NavigateToAuth()
         {
-
-            Models.User.user.username = _inputName;
-            Models.User.user.password = _inputPw;
-
 
             // Go to the URL so that Twitter authenticates the user and gives him a PIN code
             Authentication.AppCredentials = new TwitterCredentials("PxHS19i96nuyxI1YNd1P5n0cm", "FdLZwVdWx5CCTOZRs95DdEPHYWJQBnA7V0z6EMAnaMcIHHCOQX");

@@ -8,7 +8,6 @@
       xmlns:local="using:ProjetTransversal.Views"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:vm="using:ProjetTransversal.ViewModels"
-      xmlns:t="using:Tweetinvi.Logic"
       DataContext="{Binding Source={StaticResource Locator}, Path=MainPage}"
       mc:Ignorable="d">
 
@@ -33,12 +32,8 @@
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                            <Button Grid.Column="0" Command="{Binding GoToUserTimeline}" CommandParameter="{Binding CreatedBy.UserIdentifier}" Width="40" Height="40" VerticalAlignment="Top" Margin="0,0,10,0">
-                                <Button.Template>
-                                    <ControlTemplate>
-                                        <Image Source="{Binding CreatedBy.ProfileImageUrl}"/>
-                                    </ControlTemplate>
-                                </Button.Template>
+                            <Button Grid.Column="0" Command="{Binding Source={StaticResource Locator}, Path=MainPage.UserTimeline}" CommandParameter="{Binding CreatedBy.UserIdentifier.IdStr}" Width="40" Height="40" VerticalAlignment="Top" Margin="0,0,10,0">
+                                <Image Source="{Binding CreatedBy.ProfileImageUrl}"/>
                             </Button>
                             <RelativePanel Grid.Column="1">
                                 <TextBlock Name="Name" Text="{Binding CreatedBy.Name}" FontWeight="Bold"/>

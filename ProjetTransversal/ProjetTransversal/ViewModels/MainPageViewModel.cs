@@ -23,6 +23,24 @@ namespace ProjetTransversal.ViewModels
         private RelayCommand<string> _like;
         private RelayCommand<string> _reply;
         private RelayCommand<string> _retweet;
+        private RelayCommand<string> _userTimeline;
+
+        public RelayCommand<string> UserTimeline
+        {
+            get
+            {
+                if (_userTimeline == null)
+                {
+                    _userTimeline = new RelayCommand<string>(GoToUserTimeline);
+                }
+                return _userTimeline;
+            }
+        }
+
+        private void GoToUserTimeline(string param)
+        {
+            this.NavigationService.Navigate(typeof(Views.UserTimelinePage), param);
+        }
 
         public RelayCommand<string> Like
         {
@@ -134,10 +152,8 @@ namespace ProjetTransversal.ViewModels
             var tweets = Timeline.GetHomeTimeline();
             foreach (Tweetinvi.Logic.Tweet tweet in tweets)
             {
-                //var card = await _cardApi.GetOne(basic.name);
                 if (!String.IsNullOrEmpty(tweet.Text))
                 {
-                    //basic.Image = await _imageLoader.GetFromUrl(basic.img);
                     Tweets.Add(tweet);
                     var media = tweet.Media;
                     if (media.Count != 0)
