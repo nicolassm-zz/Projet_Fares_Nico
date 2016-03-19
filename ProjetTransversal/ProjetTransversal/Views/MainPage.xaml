@@ -16,7 +16,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
             <RowDefinition/>
-            <RowDefinition Height="70"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <RelativePanel Grid.Row="0">
             <Image Name="MainPic" Source="{Binding MainUser.ProfileImageUrl}" Width="40" Height="40" Margin="10,10,10,10"/>
@@ -33,7 +33,13 @@
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                            <Image Grid.Column="0" Source="{Binding CreatedBy.ProfileImageUrl}" Width="40" Height="40" VerticalAlignment="Top" Margin="0,0,10,0"/>
+                            <Button Grid.Column="0" Command="{Binding GoToUserTimeline}" CommandParameter="{Binding CreatedBy.UserIdentifier}" Width="40" Height="40" VerticalAlignment="Top" Margin="0,0,10,0">
+                                <Button.Template>
+                                    <ControlTemplate>
+                                        <Image Source="{Binding CreatedBy.ProfileImageUrl}"/>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
                             <RelativePanel Grid.Column="1">
                                 <TextBlock Name="Name" Text="{Binding CreatedBy.Name}" FontWeight="Bold"/>
                                 <TextBlock Name="At" Text="@" Foreground="#FF858585" RelativePanel.RightOf="Name" Margin="5,0,0,0"/>
@@ -51,6 +57,16 @@
                 </ListView.ItemTemplate>
             </ListView>
         </ScrollViewer>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="Home" Command="{Binding GoToHome}"/>
+            <Button Grid.Column="1" Content="Tweet" Command="{Binding WriteTweet}"/>
+            <Button Grid.Column="2" Content="Search"/>
+        </Grid>
     </Grid>
 
 </Page>

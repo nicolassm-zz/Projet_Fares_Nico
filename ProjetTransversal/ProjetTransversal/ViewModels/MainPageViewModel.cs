@@ -11,6 +11,7 @@ using Tweetinvi.Logic;
 using System;
 using System.IO;
 using GalaSoft.MvvmLight.Command;
+using Windows.UI.Xaml;
 
 namespace ProjetTransversal.ViewModels
 {
@@ -47,10 +48,45 @@ namespace ProjetTransversal.ViewModels
             {
                 if (_reply == null)
                 {
-
+                    _reply = new RelayCommand<string>(ReplyTweet);
                 }
                 return _reply;
             }
+        }
+
+        private async void ReplyTweet(string param)
+        {
+            var id = Int64.Parse(param);
+            var dialog = new ContentDialog();
+
+            dialog.MaxWidth = dialog.ActualWidth;
+
+            
+
+            var panel = new StackPanel();
+            var replyMessage = new TextBox();
+
+            panel.Children.Add(replyMessage);
+
+            dialog.Content = panel;
+
+            dialog.PrimaryButtonText = "Reply";
+
+            var tweetToReplyTo = Tweetinvi.Tweet.GetTweet(id);
+
+
+
+            dialog.PrimaryButtonCommand = new RelayCommand(() =>
+            {
+                var textToPublish = string.Format("@{0} {1}", tweetToReplyTo.CreatedBy.ScreenName, replyMessage.Text);
+                var tweet = Tweetinvi.Tweet.PublishTweetInReplyTo(textToPublish, id);
+            });
+
+            dialog.SecondaryButtonText = "Cancel";
+            dialog.SecondaryButtonCommand = new RelayCommand(() => { dialog.Hide(); });
+
+            var result = await dialog.ShowAsync();
+
         }
 
         public RelayCommand<string> Retweet
