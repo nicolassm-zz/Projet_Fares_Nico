@@ -19,6 +19,29 @@ namespace ProjetTransversal.ViewModels
     {
         private ObservableCollection<Tweetinvi.Logic.Tweet> _tweets;
         private string _contentImage;
+        private Tweetinvi.Logic.User _mainUser;
+        private RelayCommand _home;
+
+        public RelayCommand Home {
+            get {
+                if (_home == null)
+                {
+                    _home = new RelayCommand(GoToHome);
+                }
+                return _home;
+            }
+        }
+
+        private void GoToHome()
+        {
+            this.NavigationService.Navigate(typeof(Views.MainPage));
+        }
+
+        public Tweetinvi.Logic.User MainUser
+        {
+            get { return _mainUser; }
+            set { Set(ref _mainUser, value); }
+        }
 
         public string ContentImage
         {
@@ -30,6 +53,11 @@ namespace ProjetTransversal.ViewModels
         {
             get { return _tweets; }
             set { Set(ref _tweets, value); }
+        }
+
+        public UserTimelinePageViewModel()
+        {
+            MainUser = Tweetinvi.User.GetAuthenticatedUser() as Tweetinvi.Logic.User;
         }
 
         public override async Task OnNavigatedToAsync(object parameter, NavigationMode mode, IDictionary<string, object> state)
